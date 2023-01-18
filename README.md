@@ -1,14 +1,10 @@
-# Store
+# My Store
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.5.
+## Project Description
+an application for e-commerce that lets customers see a list of products they can buy, add them to a shopping cart, and then complete the checkout process.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Start Up
+Clone the project and run npm install to start it. Once this is finished, run ng serve. After that, visit http://localhost:4200/.
 
 ## Build
 

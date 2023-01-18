@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <div class="row" *ngIf="!status">
+        <app-cart [carts] = "carts"  (change)="retourStatus()"></app-cart>
+    </div>
+    <div class="row" *ngIf="status">
+        <i class="fa fa-shopping-cart text-primary" style="float: right; font-size: 35px; cursor: pointer;" (click)="changeStatus()"></i>
+    </div>
+    <div class="row" *ngIf="status">
+        <div class="col-md-4" *ngFor="let product of products['products']">
+             <div class="card" style="height: 380px; margin-top: 15px;">
+                <img routerLink="/detail/{{product.id}}" class="card-img-top" src="{{product.images[0]}}" alt="Title" width="180px" height="200px">
+                <div class="card-body">
+                    <h4 class="card-title">{{product.title}}</h4>
+                    <mark class="card-text">Price: {{product.price | currency: 'USD'}}</mark>
+                    <p routerLink="/detail/{{product.id}}">{{product.description.substring(0,50)}} ...more</p>
+                     <a (click)="addProduct(product)" class="nav-link btn btn-success text-white" role="btn" >Add To Cart</a>
+
+                </div>
+             </div>
+        </div>
+    </div>
+</div>

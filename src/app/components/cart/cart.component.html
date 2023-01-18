@@ -1,0 +1,43 @@
+<div class="row" *ngIf = "carts.length == 0">
+  <div class="col-md-6 mx-auto">
+    <h4 class="text-danger">
+      Votre Cart est Vide 
+   </h4>
+     <button (click)="changeStatusCart()"  class="btn btn-primary mt-3"> Retour a liste des produits </button>
+  </div>
+</div>
+
+<div class="row" *ngIf="carts.length > 0">
+    <div class="col-md-7">
+
+        <table class="table" *ngIf="carts.length > 0">
+            <thead>
+              <tr>
+                <th scope="col">Product Nam</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let cart of carts">
+                <td>{{cart.title}}</td>
+                <td>{{cart.price}}</td>
+                <td>
+                    <img src="{{cart.images[0]}}" style="border-radius: 50%;  width: 50px; height: 50px;" alt="" srcset="">
+                </td>
+                <td>
+                    <i (click)="deleteProductFromCart(cart.id)" class="fa fa-trash text-danger" style="font-size: 25px; cursor: pointer;"></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="col-md-4" *ngIf="carts.length > 0">
+        
+       
+          <h5>Total Price: <mark>{{total_price | currency: 'USD'}}</mark></h5>  
+          <br>
+            <button routerLink="/payment"class="btn btn-success ">Payment</button>
+      
+    </div>
+</div>
